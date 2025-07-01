@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad III: ESI y Arte - Repositorio ESI</title>
+  <meta name="description" content="Unidad III: La Enseñanza del Arte en el Marco de la ESI. Cátedra Seminario de Educación Sexual Integral, FDA, UNLP.">
+  
+  <!-- Favicon SVG (Corazón violeta) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💜</text></svg>'>
+
+  <!-- Estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS para GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unidad-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+
+  <!-- =================================================
+  BARRA DE NAVEGACIÓN
+  ================================================== -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="fa-solid fa-book-heart me-2 primary-icon"></i>
+        ESI Repositorio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Unidades
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="unidad-1.html">Unidad I: Dimensión Normativa</a></li>
+              <li><a class="dropdown-item" href="unidad-2.html">Unidad II: Enfoques Teóricos</a></li>
+              <li><a class="dropdown-item active" href="unidad-3.html" aria-current="true">Unidad III: ESI y Arte</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../collage.html">Collage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../timeline.html">Línea de tiempo</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="../index.html#equipo">Quiénes Somos</a>
+          </li>
+        </ul>
+        <!-- Buscador y Toggle -->
+        <div class="d-flex align-items-center">
+            <input class="form-control me-2" type="search" placeholder="Buscar en la unidad..." aria-label="Buscar" id="liveSearchInput">
+            <div class="form-check form-switch ms-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="themeSwitcher" aria-label="Cambiar tema">
+              <label class="form-check-label" for="themeSwitcher"><i class="fa-solid fa-circle-half-stroke"></i></label>
+            </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =================================================
+  CONTENIDO DE LA UNIDAD
+  ================================================== -->
+  <main class="container my-5">
+    
+    <!-- Breadcrumbs (migas de pan) -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Unidad III</li>
+      </ol>
+    </nav>
+    
+    <div class="row">
+      <!-- Columna de Navegación Interna -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <div class="sticky-top" style="top: 100px;">
+          <h5 class="mb-3"><i class="fa-solid fa-signs-post me-2"></i>Índice de la Unidad</h5>
+          <nav id="unidad-nav" class="nav nav-pills flex-column">
+            <a class="nav-link" href="#seccion3-1">Arte como territorio ESI</a>
+            <a class="nav-link" href="#seccion3-2">Análisis de representaciones</a>
+            <a class="nav-link" href="#seccion3-3">Producción creativa</a>
+            <a class="nav-link" href="#seccion3-4">El cuerpo en el arte</a>
+            <a class="nav-link" href="#seccion3-5">Desafíos y cuidados</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Columna de Contenido Principal -->
+      <div class="col-lg-9">
+        <header data-aos="fade-in">
+          <h2 class="display-5 fw-bold"><i class="fa-solid fa-palette me-3 primary-icon"></i>UNIDAD III: La Enseñanza del Arte en el Marco de la ESI</h2>
+          <p class="lead text-muted mt-3">Exploramos cómo las artes se convierten en un lenguaje privilegiado para abordar la ESI, permitiendo la expresión, la reflexión crítica y la construcción de nuevas sensibilidades.</p>
+        </header>
+        <hr class="my-4">
+
+        <!-- Controles para expandir/colapsar -->
+        <div class="d-flex justify-content-end mb-3 btn-group-expand">
+          <button class="btn btn-sm btn-outline-secondary" id="expand-all"><i class="fa-solid fa-angles-down me-1"></i> Expandir todo</button>
+          <button class="btn btn-sm btn-outline-secondary" id="collapse-all"><i class="fa-solid fa-angles-up me-1"></i> Colapsar todo</button>
+        </div>
+
+        <!-- Acordeón con el contenido -->
+        <div class="accordion" id="contenido-acordeon">
+          
+          <div class="accordion-item" id="seccion3-1" data-aos="fade-up">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-1" aria-expanded="true" aria-controls="collapse3-1">
+                <i class="fa-solid fa-paintbrush me-2"></i> El arte como territorio fértil para la ESI
+              </button>
+            </h3>
+            <div id="collapse3-1" class="accordion-collapse collapse show" data-bs-parent="#contenido-acordeon">
+              <div class="accordion-body">
+                <p>Las clases de artes (música, plástica, teatro, danza, etc.) son espacios potentes para trabajar la ESI. El arte moviliza la sensibilidad, la imaginación y el pensamiento crítico. A través de los lenguajes artísticos, podemos explorar las dimensiones afectivas, corporales y vinculares de la sexualidad de una manera que interpela y conmueve, superando un abordaje meramente informativo. El arte nos permite decir lo que a veces no se puede nombrar con palabras, habilitando la exploración de temas complejos de forma simbólica y cuidada.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="seccion3-2" data-aos="fade-up">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-2" aria-expanded="false" aria-controls="collapse3-2">
+                <i class="fa-solid fa-magnifying-glass-chart me-2"></i> Análisis crítico de representaciones
+              </button>
+            </h3>
+            <div id="collapse3-2" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
+              <div class="accordion-body">
+                <p>Las producciones artísticas y culturales (pinturas, canciones, películas, publicidades) están cargadas de representaciones sobre los cuerpos, los géneros, el amor y la sexualidad. Analizarlas críticamente en el aula es una estrategia ESI fundamental. Podemos preguntarnos: ¿Qué modelos de belleza se promueven? ¿Qué roles se asignan a varones y mujeres? ¿Qué diversidades están presentes y cuáles ausentes? Este análisis nos ayuda a desnaturalizar mandatos y a construir una mirada más compleja y propia.</p>
+                <h4 class="h6 mt-3">Galería de obras para análisis:</h4>
+                 <div class="row g-2">
+                    <div class="col-6 col-md-4">
+                        <a href="https://placehold.co/800x600/7e36e7/white?text=Frida+Kahlo" class="glightbox" data-gallery="unidad3-gallery" title="Obra de Frida Kahlo">
+                           <img src="https://placehold.co/400x300/7e36e7/white?text=Frida+Kahlo" class="img-fluid rounded" alt="Obra de Frida Kahlo">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                         <a href="https://placehold.co/800x600/ff6b6b/white?text=Berni" class="glightbox" data-gallery="unidad3-gallery" title="Obra de Antonio Berni">
+                           <img src="https://placehold.co/400x300/ff6b6b/white?text=Berni" class="img-fluid rounded" alt="Obra de Antonio Berni">
+                        </a>
+                    </div>
+                     <div class="col-12 col-md-4">
+                         <a href="https://placehold.co/800x600/222222/white?text=Campaña" class="glightbox" data-gallery="unidad3-gallery" title="Campaña de bien público">
+                           <img src="https://placehold.co/400x300/222222/white?text=Campaña" class="img-fluid rounded" alt="Campaña de bien público">
+                        </a>
+                    </div>
+                </div>
+                <small class="text-muted d-block text-center mt-1">Clic en las imágenes para ampliar y analizar en grupo.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="seccion3-3" data-aos="fade-up">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-3" aria-expanded="false" aria-controls="collapse3-3">
+                <i class="fa-solid fa-rocket me-2"></i> La producción creativa como forma de expresión
+              </button>
+            </h3>
+            <div id="collapse3-3" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
+              <div class="accordion-body">
+                <p>Además de analizar, el arte nos invita a crear. Proponer proyectos de producción artística que aborden temáticas de la ESI permite a lxs estudiantes explorar sus propias ideas, sentimientos y experiencias de forma cuidada y metafórica. Un cortometraje sobre los vínculos, una canción sobre los estereotipos, una performance sobre los mandatos corporales, un fanzine sobre diversidad... Las posibilidades son infinitas y habilitan la construcción de nuevos discursos y representaciones más inclusivas y respetuosas.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item" id="seccion3-4" data-aos="fade-up">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-4" aria-expanded="false" aria-controls="collapse3-4">
+                <i class="fa-solid fa-child-reaching me-2"></i> El cuerpo como primer territorio de creación y derechos
+              </button>
+            </h3>
+            <div id="collapse3-4" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
+              <div class="accordion-body">
+                <p>En las artes, especialmente en la danza y el teatro, el cuerpo es materia prima y herramienta de expresión. Trabajar desde la ESI implica habilitar una exploración corporal basada en el respeto, el consentimiento y el cuidado mutuo. ¿Cómo habitamos nuestro cuerpo? ¿Cómo nos movemos en el espacio? ¿Cómo nos vinculamos corporalmente con lxs demás? Estas prácticas ayudan a construir una imagen corporal positiva, a registrar y valorar las propias sensaciones y a establecer límites personales y respetar los ajenos.</p>
+                <!-- Video Embed -->
+                <h4 class="mt-4 h5">Performance y cuerpo</h4>
+                <div class="video-responsive">
+                    <!-- Para usar, reemplazá el contenido del atributo 'src' con el link "embed" de YouTube/Vimeo -->
+                   <iframe src="https://www.youtube.com/embed/watch?v=I4J4I-pGDoQ&list=PL_5_2nJ2a6G2nB2uVq7bW8j1pZ2e8c9bF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <small class="text-muted d-block mt-1">Ejemplo de performance que trabaja sobre el cuerpo y el espacio.</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item" id="seccion3-5" data-aos="fade-up">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-5" aria-expanded="false" aria-controls="collapse3-5">
+                <i class="fa-solid fa-shield-heart me-2"></i> Desafíos y cuidados en la práctica
+              </button>
+            </h3>
+            <div id="collapse3-5" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
+              <div class="accordion-body">
+                <p>Abordar la ESI desde el arte puede movilizar experiencias y emociones profundas. Es fundamental que como docentes generemos un encuadre de trabajo cuidado y respetuoso. Esto implica ser clarxs con las consignas, establecer acuerdos de convivencia basados en el respeto mutuo, no forzar la exposición personal y estar atentxs a lo que emerge en el grupo. No se trata de hacer terapia, sino de crear experiencias pedagógicas significativas.</p>
+                <div class="hint-card mt-3">
+                  <h5 class="h6"><i class="fa-solid fa-triangle-exclamation me-2"></i>Atención</h5>
+                  <p class="mb-0 small">Es importante conocer los protocolos de acción ante situaciones de vulneración de derechos para saber cómo actuar y a quién recurrir si fuera necesario. Nuestra función es pedagógica, pero también de cuidado y protección.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card de Bibliografía -->
+    <div class="card text-center my-5 bibliografia-drive" data-aos="zoom-in">
+      <div class="card-body p-4">
+        <h5 class="card-title h4"><i class="fa-solid fa-book-open me-2"></i>Bibliografía de la Unidad</h5>
+        <p class="card-text text-muted">Consulta los textos y materiales complementarios para profundizar los temas vistos.</p>
+        <a href="https://drive.google.com/drive/folders/163PXHK3GMOmYBYnAFxBzJnYXoQ6PjNWV?usp=drive_link" class="btn btn-secondary mt-2" target="_blank" rel="noopener noreferrer">
+          Acceder a la bibliografía completa <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+        </a>
+      </div>
+    </div>
+
+  </main>
+  
+  <!-- Botón "Volver Arriba" -->
+  <button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Pie de página -->
+  <footer class="py-4 text-center text-muted border-top mt-5">
+    <div class="container">
+      <p>Cátedra “Seminario de Educación Sexual Integral: reflexiones en torno a las prácticas docentes”</p>
+      <p class="mb-0">Facultad de Artes – Universidad Nacional de La Plata (UNLP)</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- JS para GLightbox -->
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- JS para GSAP (animaciones) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

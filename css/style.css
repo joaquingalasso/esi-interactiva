@@ -1,0 +1,392 @@
+
+/*
+ * Hoja de estilos principal para el Repositorio ESI.
+ * Acá definimos la pinta que va a tener nuestro sitio.
+ * Usamos variables CSS para que cambiar colores sea pan comido.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* =================================================
+  Variables de Color y Tipografía
+================================================== */
+:root {
+  --primary-color: #7e36e7;
+  --secondary-color: #ff6b6b;
+  --light-bg: #f7f7f7;
+  --dark-bg: #1a1a1a;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #2c2c2c;
+  --text-light: #222;
+  --text-dark: #f0f0f0;
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-dark: rgba(255, 255, 255, 0.15);
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --card-radius: 12px;
+}
+
+/* =================================================
+  Configuración para el modo oscuro con Bootstrap
+================================================== */
+[data-bs-theme="dark"] {
+  --bs-body-color: var(--text-dark);
+  --bs-body-bg: var(--dark-bg);
+  --bs-secondary-bg: #222;
+  --bs-tertiary-bg: #272727;
+  --bs-border-color: var(--border-dark);
+}
+
+/* =================================================
+  Estilos Generales y Reseteos
+================================================== */
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-icon {
+  color: var(--primary-color);
+}
+.secondary-icon {
+  color: var(--secondary-color);
+}
+
+/* =================================================
+  Componentes Personalizados
+================================================== */
+
+/* Barra de Navegación */
+.navbar {
+  transition: background-color 0.3s ease;
+}
+.navbar-brand .fa-book-heart {
+  font-size: 1.5rem;
+}
+.navbar .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Sección Hero */
+.hero {
+  padding: 6rem 0;
+  background: linear-gradient(45deg, rgba(126, 54, 231, 0.05), rgba(255, 107, 107, 0.05));
+}
+[data-bs-theme="dark"] .hero {
+   background: linear-gradient(45deg, rgba(126, 54, 231, 0.1), rgba(255, 107, 107, 0.1));
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #6a2cbd;
+  border-color: #6a2cbd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(126, 54, 231, 0.4);
+}
+.cta-button {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.btn-group-expand .btn {
+  border-radius: 20px;
+}
+
+/* Cards */
+.card {
+  border-radius: var(--card-radius);
+  border: 1px solid var(--bs-border-color);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+[data-bs-theme="light"] .card {
+  background-color: var(--card-bg-light);
+}
+[data-bs-theme="dark"] .card {
+  background-color: var(--card-bg-dark);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+[data-bs-theme="dark"] .card:hover {
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.card-link .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sección Quiénes Somos */
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bs-secondary-bg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .team-photo {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Hint Card ("Sabías que...") */
+.hint-card {
+  padding: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  background-color: rgba(255, 107, 107, 0.08);
+  border-radius: 0 var(--card-radius) var(--card-radius) 0;
+}
+[data-bs-theme="dark"] .hint-card {
+  background-color: rgba(255, 107, 107, 0.15);
+}
+
+
+/* Páginas de Unidades */
+#unidad-nav .nav-link {
+  color: var(--bs-body-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+#unidad-nav .nav-link:hover {
+  background-color: rgba(126, 54, 231, 0.1);
+  color: var(--primary-color);
+}
+#unidad-nav .nav-link.active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primary-color);
+  background-color: rgba(126, 54, 231, 0.05);
+  font-weight: 600;
+}
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+   background-color: rgba(126, 54, 231, 0.15);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(126, 54, 231, 0.25);
+}
+.accordion-item {
+   background-color: transparent;
+}
+[data-bs-theme="light"] .accordion-item {
+  background-color: var(--card-bg-light);
+}
+[data-bs-theme="dark"] .accordion-item {
+  background-color: var(--card-bg-dark);
+}
+
+/* Card de Bibliografía en Drive */
+.bibliografia-drive {
+  background: linear-gradient(45deg, rgba(126, 54, 231, 0.08), rgba(255, 107, 107, 0.08));
+  border-color: rgba(126, 54, 231, 0.5);
+  border-width: 1px;
+  border-style: solid;
+}
+[data-bs-theme="dark"] .bibliografia-drive {
+  background: linear-gradient(45deg, rgba(126, 54, 231, 0.15), rgba(255, 107, 107, 0.15));
+  border-color: rgba(255, 107, 107, 0.5);
+}
+
+.bibliografia-drive .btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.bibliografia-drive .btn-secondary:hover {
+    background-color: #e65252;
+    border-color: #e65252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Galería y Video */
+.gallery a img, .grid-item img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+.gallery a:hover img, .grid-item a:hover img {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-top: 56.25%; /* Proporción 16:9 */
+  position: relative;
+  border-radius: var(--card-radius);
+}
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Botón "Volver Arriba" */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1050;
+}
+
+/* =================================================
+  Página Collage (Isotope)
+================================================== */
+.collage-filters .btn {
+  border-radius: 20px;
+  margin: 0 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.collage-filters .btn.is-checked {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+[data-bs-theme="light"] .collage-filters .btn:not(.is-checked) {
+  background-color: var(--light-bg);
+  border-color: var(--border-light);
+  color: var(--text-light);
+}
+[data-bs-theme="dark"] .collage-filters .btn:not(.is-checked) {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+.collage-grid {
+  margin: -10px;
+}
+.grid-item {
+  padding: 10px;
+  /* El ancho lo maneja Isotope */
+}
+.grid-item .card {
+  margin-bottom: 0; /* Isotope maneja el espaciado */
+}
+.grid-item .card-body {
+  text-align: left;
+}
+.grid-item .card-img-top {
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+.grid-item .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.grid-item .card-text {
+  font-size: 0.85rem;
+}
+.grid-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: var(--card-radius);
+}
+.grid-item a:hover .grid-item-overlay {
+    opacity: 1;
+}
+
+/* =================================================
+  Página Línea de Tiempo (Vis.js)
+================================================== */
+#timeline-container {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+}
+.vis-item {
+  background-color: var(--primary-color);
+  border-color: #6a2cbd;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.vis-item.vis-selected {
+  background-color: var(--secondary-color);
+  border-color: #e65252;
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+.vis-timeline {
+  border: none;
+}
+.vis-time-axis .vis-grid.vis-odd {
+    background: rgba(0,0,0,0.02);
+}
+[data-bs-theme="dark"] .vis-time-axis .vis-grid.vis-odd {
+    background: rgba(255,255,255,0.03);
+}
+
+#timeline-details {
+    transition: all 0.3s ease-in-out;
+}
+
+#timeline-details .card {
+    border-left: 5px solid var(--primary-color);
+}
+
+#timeline-details.empty-state {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bs-secondary-bg);
+    border-radius: var(--card-radius);
+}
+
+/* =================================================
+  GLightbox Personalización
+================================================== */
+.gslide-description {
+    background: rgba(0,0,0,0.7) !important;
+    padding: 1.5rem !important;
+    font-family: 'Poppins', sans-serif;
+}
+.gslide-title {
+    color: white !important;
+    font-weight: 600;
+}
+.gslide-desc {
+    color: #f0f0f0 !important;
+    font-size: 0.95rem;
+}
+
+
+/* Animaciones y transiciones suaves */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
