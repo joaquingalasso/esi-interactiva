@@ -136,13 +136,13 @@ body.menu-open {
     z-index: 1100;
   }
 }
+
 /* Arreglo popup accesibilidad */
 .accessibility-menu {
-  max-width: 280px;
-  overflow-y: auto;
+  min-width: 250px;
 }
-.accessibility-menu .dropdown-item {
-  white-space: normal; /* Permite que el texto se parta en varias líneas */
+.accessibility-menu .form-check-label {
+  cursor: pointer;
 }
 
 /* Sección Hero */
