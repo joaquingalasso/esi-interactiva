@@ -122,11 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.remove('menu-open');
     });
 
-    // Cierra el menú al hacer clic en un enlace.
+    // Cierra el menú al hacer clic en un enlace, excepto si es el toggle de un dropdown.
     navCollapseEl.addEventListener('click', (e) => {
-        if (e.target.matches('.nav-link') || e.target.matches('.dropdown-item')) {
+        const target = e.target;
+        if ((target.matches('.nav-link') && !target.matches('.dropdown-toggle')) || target.matches('.dropdown-item')) {
             const bsCollapse = bootstrap.Collapse.getInstance(navCollapseEl);
-            if (bsCollapse) {
+            if (bsCollapse && navCollapseEl.classList.contains('show')) {
                 bsCollapse.hide();
             }
         }
