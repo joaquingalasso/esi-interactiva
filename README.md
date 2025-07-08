@@ -10,6 +10,7 @@
 
 ## Características Principales
 
+-   **Programa del Seminario:** Página dedicada con el programa oficial completo, incluyendo fundamentación, objetivos, contenidos, bibliografía y modalidad de cursada.
 -   **Unidades Temáticas:** Contenido teórico del seminario, enriquecido con glosario interactivo, quices de autoevaluación y un muro de comentarios para el debate.
 -   **Collage Multimedia:** Un tablero de inspiración con recursos filtrables como videos, obras de arte, documentos y podcasts.
 -   **Línea de Tiempo Interactiva:** Un recorrido visual por los hitos históricos y normativos de la ESI en Argentina.
@@ -35,6 +36,14 @@ No necesitás instalar nada. Simplemente seguí estos pasos:
 ## Cómo Personalizar el Contenido
 
 Este proyecto fue pensado para ser fácilmente modificable por personas con conocimientos básicos de HTML y JavaScript.
+
+### Actualizar el Programa del Seminario
+
+El contenido completo del programa del seminario se encuentra en el archivo `programa.html`.
+
+1.  **Fuente de verdad:** La cátedra proveerá el archivo `Programa.pdf` actualizado para cada ciclo lectivo. Todo el contenido textual de `programa.html` debe ser una transcripción fiel de ese documento.
+2.  **Actualización:** Editá directamente el archivo `programa.html` para reflejar los cambios en el texto, equipo docente, horarios, etc.
+3.  **Enlaces a Unidades:** Recordá verificar que los enlaces a las Unidades (`<a href="unidades/unidad-X.html">...</a>`) dentro del programa sigan siendo correctos si se reestructura el sitio.
 
 ### Editar la Línea de Tiempo
 

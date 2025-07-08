@@ -32,6 +32,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="programa.html">Programa</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unidades</a>
             <ul class="dropdown-menu">
@@ -40,10 +41,9 @@
               <li><a class="dropdown-item" href="unidades/unidad-3.html">Unidad III: ESI y Arte</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a class="nav-link" href="decalogo.html">Decálogo</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="collage.html">Collage</a></li>
           <li class="nav-item"><a class="nav-link" href="timeline.html">Línea de tiempo</a></li>
-          <li class="nav-item"><a class="nav-link" href="decalogo.html">Decálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#equipo">Quiénes Somos</a></li>
         </ul>
         <!-- Controles de Accesibilidad y Tema -->
         <div class="d-flex align-items-center">
@@ -89,23 +89,113 @@
     <div class="text-center mb-5 collage-filters" data-aos="fade-up">
       <div class="btn-group flex-wrap" role="group" aria-label="Filtros de recursos">
         <button type="button" class="btn btn-outline-primary is-checked" data-filter="*">Todos</button>
-        <button type="button" class="btn btn-outline-primary" data-filter=".arte">Arte</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".literatura">Literatura</button>
         <button type="button" class="btn btn-outline-primary" data-filter=".video">Video</button>
-        <button type="button" class="btn btn-outline-primary" data-filter=".ley">Ley</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".musica">Música</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".normativa">Normativa</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".arte">Arte</button>
         <button type="button" class="btn btn-outline-primary" data-filter=".podcast">Podcast</button>
       </div>
     </div>
 
     <!-- Grilla del Collage (Masonry) -->
     <div class="row collage-grid" data-aos="fade-up" data-aos-delay="200">
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x1200/7e36e7/white?text=Arte+ESI" class="glightbox" data-gallery="collage" title="Afiche sobre ESI"><div class="card"><img src="https://placehold.co/400x600/7e36e7/white?text=Arte+ESI" class="card-img-top" alt="Afiche sobre ESI"><div class="card-body"><h5 class="card-title">Afiche sobre ESI</h5><p class="card-text text-muted">Ejemplo de producción artística.</p></div></div></a></div>
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item video"><a href="https://www.youtube.com/watch?v=GrEA2tJj_3M" class="glightbox" data-gallery="collage" title="Canal Encuentro - ¿Qué es la ESI?"><div class="card"><img src="https://placehold.co/400x300/ff6b6b/white?text=Video" class="card-img-top" alt="Video sobre ESI"><div class="grid-item-overlay"><i class="fa-solid fa-play"></i></div><div class="card-body"><h5 class="card-title">¿Qué es la ESI?</h5><p class="card-text text-muted">Corto animado de Canal Encuentro.</p></div></div></a></div>
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item ley"><a href="https://www.argentina.gob.ar/sites/default/files/ley-de-educ-nac-58ac89392ea4c.pdf" class="glightbox" data-gallery="collage" data-type="iframe" title="Ley 26.206 de Educación Nacional"><div class="card"><img src="https://placehold.co/400x500/222222/white?text=Ley+PDF" class="card-img-top" alt="Documento de Ley"><div class="grid-item-overlay"><i class="fa-solid fa-file-pdf"></i></div><div class="card-body"><h5 class="card-title">Ley de Educación Nacional</h5><p class="card-text text-muted">Documento oficial en PDF.</p></div></div></a></div>
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item podcast"><a href="https://ia801507.us.archive.org/27/items/LaESIenJuego/LaESIenJuego.mp3" class="glightbox" data-gallery="collage" data-type="audio" title="Podcast: La ESI en Juego"><div class="card"><img src="https://placehold.co/400x400/7e36e7/white?text=Podcast" class="card-img-top" alt="Podcast sobre ESI"><div class="grid-item-overlay"><i class="fa-solid fa-headphones-simple"></i></div><div class="card-body"><h5 class="card-title">La ESI en juego</h5><p class="card-text text-muted">Episodio de podcast para docentes.</p></div></div></a></div>
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x800/ff6b6b/white?text=Mural" class="glightbox" data-gallery="collage" title="Mural por la Diversidad"><div class="card"><img src="https://placehold.co/400x400/ff6b6b/white?text=Mural" class="card-img-top" alt="Mural por la Diversidad"><div class="card-body"><h5 class="card-title">Mural por la Diversidad</h5><p class="card-text text-muted">Intervención artística en espacio público.</p></div></div></a></div>
+      
+      <!-- Virginia Woolf -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item literatura">
+        <a href="#woolf-lightbox-content" class="glightbox" data-gallery="collage" data-type="inline" title="Un cuarto propio - Virginia Woolf" data-description="Texto completo de la obra fundamental del feminismo, donde Woolf explora las barreras que enfrentan las mujeres en el ámbito intelectual y creativo. (Fuente: Proyecto Gutenberg)">
+          <div class="card collage-card">
+            <img src="https://placehold.co/400x300/7e36e7/white?text=Un+Cuarto+Propio" class="card-img-top" alt="Portada del libro Un Cuarto Propio">
+            <div class="collage-card-hover"><i class="fa-solid fa-book-open"></i></div>
+            <div class="card-body"><h5 class="card-title">Un cuarto propio</h5><p class="card-text text-muted">Libro de Virginia Woolf.</p></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Video Arroz con Leche -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item video musica">
+        <a href="https://www.youtube.com/watch?v=dX5yiVZ-eAs" class="glightbox" data-gallery="collage" title="Canticuénticos - Arroz con Leche (versión inclusiva)">
+          <div class="card collage-card">
+            <img src="https://img.youtube.com/vi/dX5yiVZ-eAs/hqdefault.jpg" class="card-img-top" alt="Video Arroz con Leche de Canticuénticos">
+            <div class="collage-card-hover"><i class="fa-solid fa-video"></i></div>
+            <div class="card-body"><h5 class="card-title">Arroz con Leche</h5><p class="card-text text-muted">Versión inclusiva por Canticuénticos.</p></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Silvina Ocampo - Pecado Mortal -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item literatura">
+        <a href="cuentos/el-pecado-mortal.html" class="glightbox" data-gallery="collage" data-type="iframe" title="El pecado mortal - Silvina Ocampo">
+          <div class="card collage-card">
+            <img src="https://placehold.co/400x300/ff6b6b/white?text=El+Pecado+Mortal" class="card-img-top" alt="Ilustración para El Pecado Mortal">
+            <div class="collage-card-hover"><i class="fa-solid fa-book-open"></i></div>
+            <div class="card-body"><h5 class="card-title">El pecado mortal</h5><p class="card-text text-muted">Cuento de Silvina Ocampo.</p></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Ley 26.150 -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item normativa">
+        <a href="https://www.argentina.gob.ar/sites/default/files/ley-26.150_0.pdf" class="glightbox" data-gallery="collage" data-type="iframe" title="Ley 26.150 de Educación Sexual Integral">
+          <div class="card collage-card">
+            <img src="https://placehold.co/400x300/222222/white?text=LEY+26.150" class="card-img-top" alt="Documento PDF de la Ley ESI">
+            <div class="collage-card-hover"><i class="fa-solid fa-gavel"></i></div>
+            <div class="card-body"><h5 class="card-title">Ley ESI</h5><p class="card-text text-muted">Texto completo de la Ley 26.150.</p></div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Arte -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x1200/7e36e7/white?text=Arte+ESI" class="glightbox" data-gallery="collage" title="Afiche sobre ESI"><div class="card collage-card"><img src="https://placehold.co/400x300/7e36e7/white?text=Arte+ESI" class="card-img-top" alt="Afiche sobre ESI"><div class="collage-card-hover"><i class="fa-solid fa-palette"></i></div><div class="card-body"><h5 class="card-title">Afiche sobre ESI</h5><p class="card-text text-muted">Ejemplo de producción artística.</p></div></div></a></div>
+      
+      <!-- Silvina Ocampo - Carta perdida -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item literatura">
+        <a href="cuentos/carta-perdida-en-un-cajon.html" class="glightbox" data-gallery="collage" data-type="iframe" title="Carta perdida en un cajón - Silvina Ocampo">
+          <div class="card collage-card">
+            <img src="https://placehold.co/400x300/ff6b6b/white?text=Carta+Perdida..." class="card-img-top" alt="Ilustración para Carta perdida en un cajón">
+            <div class="collage-card-hover"><i class="fa-solid fa-book-open"></i></div>
+            <div class="card-body"><h5 class="card-title">Carta perdida en un cajón</h5><p class="card-text text-muted">Cuento de Silvina Ocampo.</p></div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Video -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item video"><a href="https://www.youtube.com/watch?v=GrEA2tJj_3M" class="glightbox" data-gallery="collage" title="Canal Encuentro - ¿Qué es la ESI?"><div class="card collage-card"><img src="https://img.youtube.com/vi/GrEA2tJj_3M/hqdefault.jpg" class="card-img-top" alt="Video sobre ESI"><div class="collage-card-hover"><i class="fa-solid fa-video"></i></div><div class="card-body"><h5 class="card-title">¿Qué es la ESI?</h5><p class="card-text text-muted">Corto animado de Canal Encuentro.</p></div></div></a></div>
+      
+      <!-- Convencion Derechos del Niño -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item normativa">
+        <a href="https://www.unicef.org/es/documents/convencion-sobre-los-derechos-del-nino" class="glightbox" data-gallery="collage" data-type="iframe" title="Convención sobre los Derechos del Niño (UNICEF)">
+          <div class="card collage-card">
+            <img src="https://placehold.co/400x300/222222/white?text=CDN" class="card-img-top" alt="Documento PDF de la Convención sobre los Derechos del Niño">
+            <div class="collage-card-hover"><i class="fa-solid fa-gavel"></i></div>
+            <div class="card-body"><h5 class="card-title">Derechos del Niño</h5><p class="card-text text-muted">Convención de la ONU.</p></div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Podcast -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item podcast"><a href="https://ia801507.us.archive.org/27/items/LaESIenJuego/LaESIenJuego.mp3" class="glightbox" data-gallery="collage" data-type="audio" title="Podcast: La ESI en Juego"><div class="card collage-card"><img src="https://placehold.co/400x300/7e36e7/white?text=Podcast" class="card-img-top" alt="Podcast sobre ESI"><div class="collage-card-hover"><i class="fa-solid fa-headphones-simple"></i></div><div class="card-body"><h5 class="card-title">La ESI en juego</h5><p class="card-text text-muted">Episodio de podcast para docentes.</p></div></div></a></div>
+      
+      <!-- Arte -->
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x800/ff6b6b/white?text=Mural" class="glightbox" data-gallery="collage" title="Mural por la Diversidad"><div class="card collage-card"><img src="https://placehold.co/400x300/ff6b6b/white?text=Mural" class="card-img-top" alt="Mural por la Diversidad"><div class="collage-card-hover"><i class="fa-solid fa-palette"></i></div><div class="card-body"><h5 class="card-title">Mural por la Diversidad</h5><p class="card-text text-muted">Intervención artística en espacio público.</p></div></div></a></div>
+    
     </div>
   </main>
   
+  <!-- Contenido para el Lightbox de Woolf -->
+  <div id="woolf-lightbox-content" class="glightbox-inline-content">
+    <div class="inline-lightbox-container">
+      <h3>Un cuarto propio</h3>
+      <p class="text-muted">Virginia Woolf (1929)</p>
+      <hr>
+      <p>Hacé clic en el botón para abrir el libro en una nueva pestaña y poder leerlo.</p>
+      <a href="https://www.gutenberg.org/files/59783/59783-h/59783-h.htm" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-3">
+        Leer en Proyecto Gutenberg <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+      </a>
+    </div>
+  </div>
+
+
   <!-- SECCIÓN FORMULARIO DE SUGERENCIAS -->
     <section id="nuevo-recurso" class="py-5 bg-body-secondary mt-5">
       <div class="container">
@@ -123,7 +213,7 @@
                 <div class="mb-3"><textarea class="form-control" name="sugerencia_recurso" rows="4" placeholder="Pegá acá el link al recurso y contanos brevemente de qué se trata y por qué lo sugerís..." required></textarea></div>
                 <button type="submit" class="btn btn-secondary">Sugerir Recurso</button>
             </form>
-             <small class="d-block mt-3 text-muted">No te olvides de configurar tu endpoint de Formspree.</small>
+             
           </div>
         </div>
       </div>
