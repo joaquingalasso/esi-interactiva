@@ -1,8 +1,8 @@
 
 /*
- * Hoja de estilos principal para el Repositorio ESI.
- * Acá definimos la pinta que va a tener nuestro sitio.
- * Usamos variables CSS para que cambiar colores sea pan comido.
+ * Hoja de estilos principal para ESInteractiva.
+ * Acá definimos la pinta que va a tener nuestro sitio,
+ * incluyendo los modos de accesibilidad y todos los componentes nuevos.
 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -12,16 +12,49 @@
 :root {
   --primary-color: #7e36e7;
   --secondary-color: #ff6b6b;
-  --light-bg: #f7f7f7;
-  --dark-bg: #1a1a1a;
+  --light-bg: #f8f9fa;
+  --dark-bg: #121212;
   --card-bg-light: #ffffff;
-  --card-bg-dark: #2c2c2c;
-  --text-light: #222;
-  --text-dark: #f0f0f0;
+  --card-bg-dark: #1e1e1e;
+  --text-light: #212529;
+  --text-dark: #e9ecef;
   --border-light: rgba(0, 0, 0, 0.1);
   --border-dark: rgba(255, 255, 255, 0.15);
   --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   --card-radius: 12px;
+  --navbar-height: 70px; /* Altura de la barra de navegación */
+}
+
+/* =================================================
+  Modos de Accesibilidad
+================================================== */
+
+/* Modo Alto Contraste */
+html.high-contrast {
+  --primary-color: #9D00FF;
+  --secondary-color: #FFC700;
+  --light-bg: #ffffff;
+  --dark-bg: #000000;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --border-light: #000000;
+  --border-dark: #ffffff;
+}
+html.high-contrast [data-bs-theme="dark"] .btn-outline-secondary {
+    --bs-btn-color: #fff;
+    --bs-btn-border-color: #fff;
+}
+html.high-contrast [data-bs-theme="light"] .btn-outline-secondary {
+    --bs-btn-color: #000;
+    --bs-btn-border-color: #000;
+}
+
+
+/* Modo Fuente Grande */
+html.font-large {
+  font-size: 115%;
 }
 
 /* =================================================
@@ -30,25 +63,36 @@
 [data-bs-theme="dark"] {
   --bs-body-color: var(--text-dark);
   --bs-body-bg: var(--dark-bg);
+  --bs-body-color-rgb: 233, 236, 239;
   --bs-secondary-bg: #222;
-  --bs-tertiary-bg: #272727;
+  --bs-tertiary-bg: #1a1a1a;
   --bs-border-color: var(--border-dark);
+  --bs-link-color: var(--secondary-color);
+  --bs-link-hover-color: #ff8989;
+}
+[data-bs-theme="dark"] .breadcrumb-item a {
+    color: var(--secondary-color);
+}
+[data-bs-theme="dark"] .navbar-brand img {
+    filter: invert(1) brightness(2);
 }
 
 /* =================================================
-  Estilos Generales y Reseteos
+  Estilos Generales
 ================================================== */
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
 }
 
-.primary-icon {
-  color: var(--primary-color);
+body.menu-open {
+  overflow: hidden;
 }
-.secondary-icon {
-  color: var(--secondary-color);
-}
+
+.primary-icon { color: var(--primary-color); }
+.secondary-icon { color: var(--secondary-color); }
 
 /* =================================================
   Componentes Personalizados
@@ -56,14 +100,49 @@ body {
 
 /* Barra de Navegación */
 .navbar {
+  height: var(--navbar-height);
   transition: background-color 0.3s ease;
+  z-index: 1030;
 }
-.navbar-brand .fa-book-heart {
+.navbar-brand .fa-book-heart, .navbar-brand img {
   font-size: 1.5rem;
 }
 .navbar .nav-link.active {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     font-weight: 600;
+}
+.dropdown-menu .dropdown-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+[data-bs-theme="dark"] .dropdown-menu {
+    --bs-dropdown-bg: var(--card-bg-dark);
+    --bs-dropdown-link-color: var(--text-dark);
+    --bs-dropdown-link-hover-bg: rgba(255,255,255,0.1);
+}
+.navbar-collapse {
+    transition: height 0.3s ease-in-out;
+}
+@media (max-width: 991.98px) {
+  .navbar-collapse.show, .navbar-collapse.collapsing {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--bs-body-bg);
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 1100;
+  }
+}
+/* Arreglo popup accesibilidad */
+.accessibility-menu {
+  max-width: 280px;
+  overflow-y: auto;
+}
+.accessibility-menu .dropdown-item {
+  white-space: normal; /* Permite que el texto se parta en varias líneas */
 }
 
 /* Sección Hero */
@@ -76,23 +155,13 @@ body {
 }
 
 /* Botones */
-.btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-.btn-primary:hover, .btn-primary:focus {
-  background-color: #6a2cbd;
-  border-color: #6a2cbd;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(126, 54, 231, 0.4);
-}
-.cta-button {
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-}
-
-.btn-group-expand .btn {
-  border-radius: 20px;
-}
+.btn { border-radius: 20px; }
+.btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); }
+.btn-primary:hover, .btn-primary:focus { background-color: color-mix(in srgb, var(--primary-color), black 15%); border-color: color-mix(in srgb, var(--primary-color), black 15%); }
+.btn-secondary { background-color: var(--secondary-color); border-color: var(--secondary-color); }
+.btn-secondary:hover, .btn-secondary:focus { background-color: color-mix(in srgb, var(--secondary-color), black 15%); border-color: color-mix(in srgb, var(--secondary-color), black 15%); }
+.cta-button { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; }
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(126, 54, 231, 0.4); }
 
 /* Cards */
 .card {
@@ -100,293 +169,135 @@ body {
   border: 1px solid var(--bs-border-color);
   box-shadow: var(--card-shadow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bs-card-bg); /* Bootstrap variable */
 }
-[data-bs-theme="light"] .card {
-  background-color: var(--card-bg-light);
-}
-[data-bs-theme="dark"] .card {
-  background-color: var(--card-bg-dark);
-}
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+[data-bs-theme="dark"] .card:hover { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-[data-bs-theme="dark"] .card:hover {
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.card-link .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Sección Quiénes Somos */
+/* Sección Equipo */
 .team-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--bs-secondary-bg);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover .team-photo {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
+  border: 4px solid var(--bs-secondary-bg); box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1rem; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* =================================================
+  Páginas de Unidades
+================================================== */
 
-/* Hint Card ("Sabías que...") */
-.hint-card {
-  padding: 1rem;
-  border-left: 4px solid var(--secondary-color);
-  background-color: rgba(255, 107, 107, 0.08);
-  border-radius: 0 var(--card-radius) var(--card-radius) 0;
+/* Solución al bug de superposición Navbar/Sidebar */
+.sidebar-anchors {
+  position: sticky;
+  top: calc(var(--navbar-height) + 1rem); /* navbar height + padding */
+  z-index: 0; /* Menor que el z-index de la navbar (1030), evita superposición */
 }
-[data-bs-theme="dark"] .hint-card {
-  background-color: rgba(255, 107, 107, 0.15);
-}
 
-
-/* Páginas de Unidades */
 #unidad-nav .nav-link {
   color: var(--bs-body-color);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-#unidad-nav .nav-link:hover {
-  background-color: rgba(126, 54, 231, 0.1);
-  color: var(--primary-color);
-}
-#unidad-nav .nav-link.active {
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: 600;
+#unidad-nav .nav-link:hover { background-color: rgba(126, 54, 231, 0.1); color: var(--primary-color); }
+#unidad-nav .nav-link.active { background-color: var(--primary-color); color: white; font-weight: 600; }
+
+.accordion-button:not(.collapsed) { color: var(--primary-color); background-color: rgba(126, 54, 231, 0.05); font-weight: 600; }
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) { background-color: rgba(126, 54, 231, 0.15); }
+.accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(126, 54, 231, 0.25); }
+
+/* Arreglo botones expandir/colapsar */
+.btn-group-expand {
+    gap: 0.75rem;
 }
 
-.accordion-button:not(.collapsed) {
-  color: var(--primary-color);
-  background-color: rgba(126, 54, 231, 0.05);
-  font-weight: 600;
+/* =================================================
+  Nuevas Funcionalidades
+================================================== */
+
+/* Bibliografía Rediseñada */
+.biblio-list {
+  padding-left: 1.2rem;
 }
-[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
-   background-color: rgba(126, 54, 231, 0.15);
+.biblio-list li {
+  margin-bottom: 0.75rem;
+}
+.btn-drive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon-drive {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(126, 54, 231, 0.25);
-}
-.accordion-item {
-   background-color: transparent;
-}
-[data-bs-theme="light"] .accordion-item {
-  background-color: var(--card-bg-light);
-}
-[data-bs-theme="dark"] .accordion-item {
-  background-color: var(--card-bg-dark);
-}
 
-/* Card de Bibliografía en Drive */
-.bibliografia-drive {
-  background: linear-gradient(45deg, rgba(126, 54, 231, 0.08), rgba(255, 107, 107, 0.08));
-  border-color: rgba(126, 54, 231, 0.5);
-  border-width: 1px;
-  border-style: solid;
+/* Glosario */
+.glossary-term {
+  border-bottom: 2px dotted var(--secondary-color);
+  cursor: help;
 }
-[data-bs-theme="dark"] .bibliografia-drive {
-  background: linear-gradient(45deg, rgba(126, 54, 231, 0.15), rgba(255, 107, 107, 0.15));
-  border-color: rgba(255, 107, 107, 0.5);
+.tippy-box[data-theme~='esi-theme'] {
+  background-color: var(--primary-color); color: white;
 }
+.tippy-box[data-theme~='esi-theme'][data-placement^='top'] > .tippy-arrow::before { border-top-color: var(--primary-color); }
+.tippy-box[data-theme~='esi-theme'][data-placement^='bottom'] > .tippy-arrow::before { border-bottom-color: var(--primary-color); }
 
-.bibliografia-drive .btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: white;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-}
-.bibliografia-drive .btn-secondary:hover {
-    background-color: #e65252;
-    border-color: #e65252;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-}
-
-/* Galería y Video */
-.gallery a img, .grid-item img {
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  cursor: pointer;
-}
-.gallery a:hover img, .grid-item a:hover img {
-  transform: scale(1.05);
-  opacity: 0.85;
-}
-
-.video-responsive {
-  overflow: hidden;
-  padding-top: 56.25%; /* Proporción 16:9 */
-  position: relative;
-  border-radius: var(--card-radius);
-}
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Botón "Volver Arriba" */
-#btn-back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+#glossary-btn {
+  position: fixed; bottom: 20px; right: 20px; z-index: 1050;
+  width: 50px; height: 50px; border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1050;
 }
+.modal-body ul { padding-left: 1.2rem; }
+.modal-body li { margin-bottom: 1rem; }
 
-/* =================================================
-  Página Collage (Isotope)
-================================================== */
-.collage-filters .btn {
-  border-radius: 20px;
-  margin: 0 5px 10px;
-  transition: all 0.3s ease;
-}
+/* Mini-Quiz */
+.quiz-container .progress { height: 8px; border-radius: 20px; }
+.quiz-container .list-group-item { cursor: pointer; transition: all 0.2s ease; }
+.quiz-container .list-group-item:hover { background-color: rgba(126, 54, 231, 0.1); }
+.quiz-container .list-group-item.correct { background-color: #198754; color: white; border-color: #198754; }
+.quiz-container .list-group-item.incorrect { background-color: #dc3545; color: white; border-color: #dc3545; }
+.quiz-container .list-group-item.disabled { pointer-events: none; opacity: 0.7; }
+.feedback-container { font-weight: 600; }
+.feedback-container .text-success { color: #198754 !important; }
+.feedback-container .text-danger { color: #dc3545 !important; }
 
-.collage-filters .btn.is-checked {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-}
-[data-bs-theme="light"] .collage-filters .btn:not(.is-checked) {
-  background-color: var(--light-bg);
-  border-color: var(--border-light);
-  color: var(--text-light);
-}
-[data-bs-theme="dark"] .collage-filters .btn:not(.is-checked) {
-  background-color: var(--card-bg-dark);
-  border-color: var(--border-dark);
-  color: var(--text-dark);
-}
-
-.collage-grid {
-  margin: -10px;
-}
-.grid-item {
-  padding: 10px;
-  /* El ancho lo maneja Isotope */
-}
-.grid-item .card {
-  margin-bottom: 0; /* Isotope maneja el espaciado */
-}
-.grid-item .card-body {
-  text-align: left;
-}
-.grid-item .card-img-top {
-  border-radius: var(--card-radius) var(--card-radius) 0 0;
-}
-.grid-item .card-title {
-  font-size: 1rem;
-  font-weight: 600;
-}
-.grid-item .card-text {
-  font-size: 0.85rem;
-}
-.grid-item-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: var(--card-radius);
-}
-.grid-item a:hover .grid-item-overlay {
-    opacity: 1;
-}
-
-/* =================================================
-  Página Línea de Tiempo (Vis.js)
-================================================== */
-#timeline-container {
-  border: 1px solid var(--bs-border-color);
-  border-radius: var(--card-radius);
-  padding: 1rem;
-  box-shadow: var(--card-shadow);
+/* Decálogo Page */
+.decalogo-item {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
-.vis-item {
-  background-color: var(--primary-color);
-  border-color: #6a2cbd;
-  color: white;
-  border-radius: 8px;
-  font-size: 0.9rem;
+.decalogo-item .numero {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary-color);
+  opacity: 0.2;
+  margin-right: 1.5rem;
 }
-.vis-item.vis-selected {
-  background-color: var(--secondary-color);
-  border-color: #e65252;
-  box-shadow: 0 0 10px var(--secondary-color);
+.decalogo-item .texto h3 {
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
-.vis-timeline {
-  border: none;
+.decalogo-item .texto p {
+    color: var(--bs-secondary-color);
 }
-.vis-time-axis .vis-grid.vis-odd {
-    background: rgba(0,0,0,0.02);
-}
-[data-bs-theme="dark"] .vis-time-axis .vis-grid.vis-odd {
-    background: rgba(255,255,255,0.03);
+[data-bs-theme="dark"] .decalogo-item .texto p {
+    color: var(--bs-tertiary-color);
 }
 
-#timeline-details {
-    transition: all 0.3s ease-in-out;
-}
 
-#timeline-details .card {
-    border-left: 5px solid var(--primary-color);
-}
-
-#timeline-details.empty-state {
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bs-secondary-bg);
-    border-radius: var(--card-radius);
-}
+/* Giscus Comments */
+.giscus { margin-top: 1rem; }
 
 /* =================================================
-  GLightbox Personalización
+  Componentes de Librerías
 ================================================== */
-.gslide-description {
-    background: rgba(0,0,0,0.7) !important;
-    padding: 1.5rem !important;
-    font-family: 'Poppins', sans-serif;
-}
-.gslide-title {
-    color: white !important;
-    font-weight: 600;
-}
-.gslide-desc {
-    color: #f0f0f0 !important;
-    font-size: 0.95rem;
-}
+.vis-item { background-color: var(--primary-color); border-color: #6a2cbd; color: white; }
+.vis-item.vis-selected { background-color: var(--secondary-color); border-color: #e65252; }
 
+.gslide-description { background: rgba(0,0,0,0.7) !important; padding: 1.5rem !important; }
+.gslide-title { color: white !important; font-weight: 600; }
+.gslide-desc { color: #f0f0f0 !important; font-size: 0.95rem; }
 
-/* Animaciones y transiciones suaves */
-a, button {
-  transition: all 0.2s ease-in-out;
-}
+a, button { transition: all 0.2s ease-in-out; }

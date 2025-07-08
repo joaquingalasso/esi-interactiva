@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unidad I: Dimensión Normativa - Repositorio ESI</title>
+  <title>Unidad I: Dimensión Normativa - ESInteractiva</title>
   <meta name="description" content="Unidad I: La Educación Sexual Integral. Dimensión Normativa. Cátedra Seminario de Educación Sexual Integral, FDA, UNLP.">
   
-  <!-- Favicon SVG (Corazón violeta) -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💜</text></svg>'>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
 
   <!-- Estilos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- CSS para GLightbox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#unidad-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
@@ -25,42 +24,41 @@
   ================================================== -->
   <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../index.html">
-        <i class="fa-solid fa-book-heart me-2 primary-icon"></i>
-        ESI Repositorio
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+        <img src="../assets/logo.svg" alt="Logo ESInteractiva" class="me-2" style="height: 40px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Inicio</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Unidades
-            </a>
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unidades</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="unidad-1.html" aria-current="true">Unidad I: Dimensión Normativa</a></li>
+              <li><a class="dropdown-item active" aria-current="page" href="unidad-1.html">Unidad I: Dimensión Normativa</a></li>
               <li><a class="dropdown-item" href="unidad-2.html">Unidad II: Enfoques Teóricos</a></li>
               <li><a class="dropdown-item" href="unidad-3.html">Unidad III: ESI y Arte</a></li>
             </ul>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="../collage.html">Collage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../timeline.html">Línea de tiempo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html#equipo">Quiénes Somos</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="../collage.html">Collage</a></li>
+          <li class="nav-item"><a class="nav-link" href="../timeline.html">Línea de tiempo</a></li>
+          <li class="nav-item"><a class="nav-link" href="../decalogo.html">Decálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#equipo">Quiénes Somos</a></li>
         </ul>
-        <!-- Buscador y Toggle -->
+        <!-- Controles de Accesibilidad y Tema -->
         <div class="d-flex align-items-center">
-            <input class="form-control me-2" type="search" placeholder="Buscar en la unidad..." aria-label="Buscar" id="liveSearchInput">
-            <div class="form-check form-switch ms-2">
+            <div class="dropdown me-2">
+              <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Opciones de accesibilidad">
+                <i class="fa-solid fa-universal-access"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end accessibility-menu">
+                <li><h6 class="dropdown-header">Accesibilidad</h6></li>
+                <li><div class="form-check form-switch dropdown-item"><input class="form-check-input" type="checkbox" role="switch" id="highContrastSwitcher"><label class="form-check-label" for="highContrastSwitcher">Alto Contraste</label></div></li>
+                <li><div class="form-check form-switch dropdown-item"><input class="form-check-input" type="checkbox" role="switch" id="fontSizeSwitcher"><label class="form-check-label" for="fontSizeSwitcher">Aumentar Fuente</label></div></li>
+              </ul>
+            </div>
+            <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="themeSwitcher" aria-label="Cambiar tema">
               <label class="form-check-label" for="themeSwitcher"><i class="fa-solid fa-circle-half-stroke"></i></label>
             </div>
@@ -72,7 +70,7 @@
   <!-- =================================================
   CONTENIDO DE LA UNIDAD
   ================================================== -->
-  <main class="container my-5">
+  <div class="container my-5">
     
     <!-- Breadcrumbs (migas de pan) -->
     <nav aria-label="breadcrumb">
@@ -85,20 +83,23 @@
     <div class="row">
       <!-- Columna de Navegación Interna -->
       <aside class="col-lg-3 d-none d-lg-block">
-        <div class="sticky-top" style="top: 100px;">
+        <div class="sidebar-anchors">
           <h5 class="mb-3"><i class="fa-solid fa-signs-post me-2"></i>Índice de la Unidad</h5>
           <nav id="unidad-nav" class="nav nav-pills flex-column">
             <a class="nav-link" href="#seccion1-1">Introducción</a>
             <a class="nav-link" href="#seccion1-2">Ley 26.150</a>
-            <a class="nav-link" href="#seccion1-3">Lineamientos Curriculares</a>
-            <a class="nav-link" href="#seccion1-4">Los 5 Ejes de la ESI</a>
+            <a class="nav-link" href="#seccion1-3">Lineamientos</a>
+            <a class="nav-link" href="#seccion1-4">Los 5 Ejes</a>
             <a class="nav-link" href="#seccion1-5">Rol Docente</a>
+            <a class="nav-link" href="#bibliografia">Bibliografía</a>
+            <a class="nav-link" href="#quiz">Autoevaluación</a>
+            <a class="nav-link" href="#comentarios">Comentarios</a>
           </nav>
         </div>
       </aside>
 
       <!-- Columna de Contenido Principal -->
-      <div class="col-lg-9">
+      <main class="col-lg-9">
         <header data-aos="fade-in">
           <h2 class="display-5 fw-bold"><i class="fa-solid fa-landmark me-3 primary-icon"></i>UNIDAD I: La Educación Sexual Integral. Dimensión Normativa</h2>
           <p class="lead text-muted mt-3">Esta unidad establece las bases legales y conceptuales de la ESI, así como sus alcances y principios fundamentales. Es el cimiento sobre el cual construimos todas nuestras prácticas.</p>
@@ -115,124 +116,134 @@
         <div class="accordion" id="contenido-acordeon">
           
           <div class="accordion-item" id="seccion1-1" data-aos="fade-up">
-            <h3 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-1" aria-expanded="true" aria-controls="collapse1-1">
-                <i class="fa-solid fa-book-open-reader me-2"></i> Introducción a la perspectiva de la ESI
-              </button>
-            </h3>
-            <div id="collapse1-1" class="accordion-collapse collapse show" data-bs-parent="#contenido-acordeon">
-              <div class="accordion-body">
-                <p>La Educación Sexual Integral (ESI) es un derecho de niñxs y adolescentes, y una obligación del Estado. No se trata de una materia aislada, sino de un enfoque transversal que atraviesa todas las áreas y prácticas escolares. Su objetivo es promover saberes y habilidades para la toma de decisiones conscientes y críticas sobre el cuidado del propio cuerpo, las relaciones interpersonales, el ejercicio de la sexualidad y de los derechos.</p>
-                <p>Entender la ESI implica superar viejos modelos centrados únicamente en lo biologicista o en la prevención de riesgos. Se trata de una propuesta mucho más amplia, que busca formar personas libres, responsables y respetuosas de sí mismas y de los demás.</p>
-              </div>
-            </div>
+            <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-1" aria-expanded="true" aria-controls="collapse1-1"><i class="fa-solid fa-book-open-reader me-2"></i> Introducción a la perspectiva de la ESI</button></h3>
+            <div id="collapse1-1" class="accordion-collapse collapse show" data-bs-parent="#contenido-acordeon"><div class="accordion-body">
+              <p>La <span class="glossary-term">Educación Sexual Integral (ESI)</span> es un derecho de niñxs y adolescentes, y una obligación del Estado. No se trata de una materia aislada, sino de un enfoque <span class="glossary-term">transversal</span> que atraviesa todas las áreas y prácticas escolares. Su objetivo es promover saberes y habilidades para la toma de decisiones conscientes y críticas sobre el cuidado del propio cuerpo, las relaciones interpersonales, el ejercicio de la sexualidad y de los derechos.</p>
+              <p>Entender la ESI implica superar viejos modelos centrados únicamente en lo <span class="glossary-term">biologicista</span> o en la prevención de riesgos. Se trata de una propuesta mucho más amplia, que busca formar personas libres, responsables y respetuosas de sí mismas y de los demás.</p>
+            </div></div>
           </div>
 
           <div class="accordion-item" id="seccion1-2" data-aos="fade-up">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-2" aria-expanded="false" aria-controls="collapse1-2">
-                <i class="fa-solid fa-gavel me-2"></i> Ley Nacional 26.150: El pilar fundamental
-              </button>
-            </h3>
-            <div id="collapse1-2" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
-              <div class="accordion-body">
-                <p>Sancionada en 2006, la Ley 26.150 crea el Programa Nacional de Educación Sexual Integral. Establece que todos los educandos tienen derecho a recibir ESI en los establecimientos educativos públicos, de gestión estatal y privada de las jurisdicciones nacional, provincial, de la Ciudad Autónoma de Buenos Aires y municipal. Es una ley de orden público, lo que significa que su aplicación es obligatoria en todo el país, respetando las particularidades de cada jurisdicción.</p>
-                <div class="row align-items-center mt-3">
-                  <div class="col-md-8">
-                    <p><strong>Puntos clave de la Ley:</strong></p>
-                    <ul>
-                      <li><strong>Universalidad:</strong> Es para todxs lxs estudiantes de todos los niveles.</li>
-                      <li><strong>Transversalidad:</strong> Atraviesa todas las asignaturas.</li>
-                      <li><strong>Laicidad:</strong> Se basa en conocimiento científico y no en dogmas religiosos.</li>
-                      <li><strong>Enfoque de género:</strong> Promueve la igualdad y cuestiona los estereotipos.</li>
-                      <li><strong>Respeto por la diversidad:</strong> Valora todas las formas de ser y sentir.</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="https://placehold.co/800x600/7e36e7/white?text=Ley\n26.150" class="glightbox" data-gallery="unidad1-gallery" title="Congreso de la Nación Argentina">
-                      <img src="https://placehold.co/400x300/7e36e7/white?text=Ley+26.150" class="img-fluid rounded shadow-sm" alt="Ilustración de la Ley 26.150">
-                    </a>
-                    <small class="text-muted d-block text-center mt-1">Clic en la imagen para ampliar</small>
-                  </div>
-                </div>
-                <!-- Video Embed -->
-                <h4 class="mt-4 h5">Debate parlamentario de la Ley</h4>
-                <div class="video-responsive">
-                  <!-- Para usar, reemplazá el contenido del atributo 'src' con el link "embed" de YouTube/Vimeo -->
-                  <iframe src="https://www.youtube.com/embed/videoseries?list=PL_5_2nJ2a6G2P1u5g9y7bWj1pZ2e8c9bF" title="Debate Ley ESI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <small class="text-muted d-block mt-1">Video ilustrativo sobre los debates que dieron origen a la ley.</small>
-              </div>
-            </div>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-2" aria-expanded="false" aria-controls="collapse1-2"><i class="fa-solid fa-gavel me-2"></i> Ley Nacional 26.150: El pilar fundamental</button></h3>
+            <div id="collapse1-2" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon"><div class="accordion-body">
+              <p>Sancionada en 2006, la Ley 26.150 crea el Programa Nacional de Educación Sexual Integral. Establece que todos los educandos tienen derecho a recibir ESI en los establecimientos educativos públicos, de gestión estatal y privada. Es una ley de <span class="glossary-term">orden público</span>, lo que significa que su aplicación es obligatoria en todo el país, respetando las particularidades de cada jurisdicción.</p>
+              <div class="row align-items-center mt-3"><div class="col-md-8"><p><strong>Puntos clave de la Ley:</strong></p><ul><li><strong>Universalidad:</strong> Es para todxs lxs estudiantes de todos los niveles.</li><li><strong>Transversalidad:</strong> Atraviesa todas las asignaturas.</li><li><strong>Laicidad:</strong> Se basa en conocimiento científico y no en dogmas religiosos.</li><li><strong>Enfoque de género:</strong> Promueve la igualdad y cuestiona los estereotipos.</li><li><strong>Respeto por la diversidad:</strong> Valora todas las formas de ser y sentir.</li></ul></div><div class="col-md-4"><a href="https://placehold.co/800x600/7e36e7/white?text=Ley\n26.150" class="glightbox" data-gallery="unidad1-gallery" title="Congreso de la Nación Argentina"><img src="https://placehold.co/400x300/7e36e7/white?text=Ley+26.150" class="img-fluid rounded shadow-sm" alt="Ilustración de la Ley 26.150"></a><small class="text-muted d-block text-center mt-1">Clic en la imagen para ampliar</small></div></div>
+              <h4 class="mt-4 h5">Debate parlamentario de la Ley</h4>
+              <div class="video-responsive"><iframe src="https://www.youtube.com/embed/videoseries?list=PL_5_2nJ2a6G2P1u5g9y7bWj1pZ2e8c9bF" title="Debate Ley ESI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><small class="text-muted d-block mt-1">Video ilustrativo sobre los debates que dieron origen a la ley.</small>
+            </div></div>
           </div>
 
           <div class="accordion-item" id="seccion1-3" data-aos="fade-up">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-3" aria-expanded="false" aria-controls="collapse1-3">
-                <i class="fa-solid fa-lines-leaning me-2"></i> Lineamientos Curriculares Nacionales
-              </button>
-            </h3>
-            <div id="collapse1-3" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
-              <div class="accordion-body">
-                <p>Para garantizar un piso común de contenidos, el Consejo Federal de Educación aprobó los Lineamientos Curriculares para la ESI (Resolución 45/08 CFE). Estos lineamientos, organizados por nivel educativo (Inicial, Primario, Secundario), ofrecen un marco general de contenidos y propuestas pedagógicas. No son una receta, sino una guía flexible que cada institución debe adaptar a su realidad y proyecto institucional, articulando con los saberes propios de cada materia.</p>
-                <div class="hint-card mt-3">
-                  <h5 class="h6"><i class="fa-solid fa-lightbulb me-2"></i>Dato Clave</h5>
-                  <p class="mb-0 small">Los lineamientos son de construcción colectiva. Se nutren de los aportes de tratados internacionales de derechos humanos, leyes nacionales de protección de derechos y los avances en el campo científico y pedagógico. ¡No son un texto cerrado!</p>
-                </div>
-              </div>
-            </div>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-3" aria-expanded="false" aria-controls="collapse1-3"><i class="fa-solid fa-lines-leaning me-2"></i> Lineamientos Curriculares Nacionales</button></h3>
+            <div id="collapse1-3" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon"><div class="accordion-body">
+              <p>Para garantizar un piso común de contenidos, el Consejo Federal de Educación aprobó los Lineamientos Curriculares para la ESI (Resolución 45/08 CFE). Estos lineamientos, organizados por nivel educativo, ofrecen un marco general de contenidos y propuestas pedagógicas. No son una receta, sino una guía flexible que cada institución debe adaptar a su realidad y proyecto institucional.</p>
+              <div class="hint-card mt-3"><h5 class="h6"><i class="fa-solid fa-lightbulb me-2"></i>Dato Clave</h5><p class="mb-0 small">Los lineamientos son de construcción colectiva. Se nutren de los aportes de tratados internacionales de derechos humanos, leyes nacionales de protección de derechos y los avances en el campo científico y pedagógico. ¡No son un texto cerrado!</p></div>
+            </div></div>
           </div>
           
           <div class="accordion-item" id="seccion1-4" data-aos="fade-up">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-4" aria-expanded="false" aria-controls="collapse1-4">
-                <i class="fa-solid fa-sitemap me-2"></i> Los 5 Ejes de la ESI
-              </button>
-            </h3>
-            <div id="collapse1-4" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
-              <div class="accordion-body">
-                <p>La ESI se articula en torno a cinco ejes conceptuales que guían la enseñanza y el aprendizaje. Estos ejes están interrelacionados y deben abordarse de forma conjunta:</p>
-                <ul>
-                  <li><strong><i class="fa-solid fa-venus-mars text-primary me-2"></i>Reconocer la perspectiva de género:</strong> Analizar críticamente las desigualdades y estereotipos entre los géneros, promoviendo relaciones más justas y equitativas.</li>
-                  <li><strong><i class="fa-solid fa-heart text-primary me-2"></i>Respetar la diversidad:</strong> Valorar las múltiples formas de ser, sentir, vivir y amar, sin prejuicios ni discriminación por orientación sexual, identidad de género o expresión.</li>
-                  <li><strong><i class="fa-solid fa-hand-holding-heart text-primary me-2"></i>Valorar la afectividad:</strong> Reconocer la importancia de las emociones y los afectos en las relaciones humanas y en la construcción de la sexualidad.</li>
-                  <li><strong><i class="fa-solid fa-scale-balanced text-primary me-2"></i>Ejercer nuestros derechos:</strong> Conocer y exigir el cumplimiento de los derechos sexuales y (no) reproductivos, y aprender a tomar decisiones libres e informadas.</li>
-                  <li><strong><i class="fa-solid fa-shield-heart text-primary me-2"></i>Cuidar el cuerpo y la salud:</strong> Promover prácticas de cuidado del propio cuerpo y del de lxs demás, abordando la salud sexual y reproductiva desde una perspectiva integral.</li>
-                </ul>
-              </div>
-            </div>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-4" aria-expanded="false" aria-controls="collapse1-4"><i class="fa-solid fa-sitemap me-2"></i> Los 5 Ejes de la ESI</button></h3>
+            <div id="collapse1-4" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon"><div class="accordion-body">
+              <p>La ESI se articula en torno a cinco ejes conceptuales que guían la enseñanza:</p>
+              <ul>
+                <li><strong><i class="fa-solid fa-venus-mars text-primary me-2"></i>Reconocer la perspectiva de género:</strong> Analizar críticamente las desigualdades y <span class="glossary-term">estereotipos</span> entre los géneros.</li>
+                <li><strong><i class="fa-solid fa-heart text-primary me-2"></i>Respetar la diversidad:</strong> Valorar las múltiples formas de ser, sentir y amar, sin discriminación por <span class="glossary-term">orientación sexual</span> o <span class="glossary-term">identidad de género</span>.</li>
+                <li><strong><i class="fa-solid fa-hand-holding-heart text-primary me-2"></i>Valorar la afectividad:</strong> Reconocer la importancia de las emociones y los afectos en las relaciones humanas.</li>
+                <li><strong><i class="fa-solid fa-scale-balanced text-primary me-2"></i>Ejercer nuestros derechos:</strong> Conocer y exigir el cumplimiento de los derechos sexuales y (no) reproductivos.</li>
+                <li><strong><i class="fa-solid fa-shield-heart text-primary me-2"></i>Cuidar el cuerpo y la salud:</strong> Promover prácticas de cuidado del propio cuerpo y del de lxs demás.</li>
+              </ul>
+            </div></div>
           </div>
           
           <div class="accordion-item" id="seccion1-5" data-aos="fade-up">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-5" aria-expanded="false" aria-controls="collapse1-5">
-                <i class="fa-solid fa-person-chalkboard me-2"></i> El Rol Docente en la Implementación
-              </button>
-            </h3>
-            <div id="collapse1-5" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon">
-              <div class="accordion-body">
-                <p>Como docentes, nuestro rol es fundamental. Somos responsables de garantizar que la ESI sea una realidad en las aulas. Esto implica formarnos continuamente, revisar nuestras propias concepciones, planificar propuestas pedagógicas situadas, trabajar en equipo con otrxs colegas y abrir canales de diálogo y confianza con lxs estudiantes y sus familias.</p>
-                <p>La ESI nos invita a transformar la escuela en un espacio más justo, inclusivo y cuidadoso para todxs. No se trata de tener todas las respuestas, sino de estar dispuestxs a construir un aprendizaje conjunto, habilitando la palabra y validando las experiencias de nuestrxs estudiantes.</p>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-5" aria-expanded="false" aria-controls="collapse1-5"><i class="fa-solid fa-person-chalkboard me-2"></i> El Rol Docente en la Implementación</button></h3>
+            <div id="collapse1-5" class="accordion-collapse collapse" data-bs-parent="#contenido-acordeon"><div class="accordion-body">
+              <p>Como docentes, nuestro rol es fundamental. Somos responsables de garantizar que la ESI sea una realidad en las aulas. Esto implica formarnos continuamente, revisar nuestras propias concepciones, planificar propuestas pedagógicas situadas, trabajar en equipo y abrir canales de diálogo y confianza con lxs estudiantes y sus familias.</p>
+              <p>La ESI nos invita a transformar la escuela en un espacio más justo, inclusivo y cuidadoso para todxs. No se trata de tener todas las respuestas, sino de estar dispuestxs a construir un aprendizaje conjunto, habilitando la palabra y validando las experiencias.</p>
+            </div></div>
+          </div>
+        </div>
+        
+        <!-- Sección de Bibliografía -->
+        <section id="bibliografia" class="my-5" data-aos="fade-up">
+          <h3 class="fw-bold text-center mb-4"><i class="fa-solid fa-book-open-reader me-2 secondary-icon"></i>Bibliografía de la Unidad</h3>
+          <p class="text-center text-muted">A continuación se presentan las fuentes bibliográficas consultadas, organizadas en dos grupos: bibliografía obligatoria asignada por la cátedra y textos complementarios de selección propia.</p>
+          
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title h5">Bibliografía Obligatoria</h4>
+              <p class="card-subtitle mb-3 text-muted small">Textos pertenecientes a la unidad n°1 del seminario:</p>
+              <ul class="biblio-list obligatoria">
+                <li>Cahn, L., Cortelletti, F. & Valeriano, C. (2020). <em>Educación Sexual Integral</em>. Fundación Huésped.</li>
+                <li>Elizalde, S. (2011). Normalizar ante todo. Ideologías prácticas sobre la identidad sexual y de género de los/as jóvenes en la dinámica de las instituciones orientadas a la juventud.</li>
+                <li>Fabbi, L., & Rovetto, F. (2020). Cuadernos feministas para la transversalización. UNR Editora.</li>
+                <li>Ley 26.150. (2006). Programa Nacional de Educación Sexual Integral.</li>
+                <li>Ley Provincial 14.744. (2015). Provincia de Buenos Aires.</li>
+                <li>Lynn, C. (2018). El impacto del feminismo en la ESI. Revista Génera.</li>
+                <li>Morgade, G. (2011). Toda educación es sexual. Hacia una educación sexuada justa. La Crujía.</li>
+                <li>Ministerio de Educación de la Nación. (2008). Lineamientos Curriculares para la Educación Sexual Integral.</li>
+                <li>Ministerio de Educación de la Nación. (2021). Colección Derechos Humanos, Género y ESI en la escuela.</li>
+                <li>Ministerio de Educación de la Nación. (2021). El ABC de la ESI.</li>
+                <li>Wainerman C. y Chami N. (2010) “Sexualidad y escuela. Perspectivas programáticas posibles”. En Revista de Política Educativa N° 1. Buenos Aires: Prometeo.</li>
+              </ul>
+
+              <hr class="my-4">
+
+              <h4 class="card-title h5">Bibliografía Complementaria</h4>
+               <p class="card-subtitle mb-3 text-muted small">Textos que incorporamos para ampliar el análisis de este trabajo:</p>
+              <ul class="biblio-list complementaria">
+                <li>Fundación Huésped. (2018). <em>Los ejes de la ESI</em>.</li>
+              </ul>
+            </div>
+            <div class="card-footer text-center">
+              <a class="btn btn-secondary btn-drive" target="_blank" href="https://drive.google.com/drive/folders/1zdlgyEAscoCIt5GcelzrkYu9P04DD9gQ?usp=sharing">
+                 <svg class="icon-drive" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M22.01 13.51l-1.47-4.14c-.2-.55-.76-.9-1.34-.9H4.79c-.58 0-1.14.35-1.34.9L1.99 13.51c-.2.55.09 1.18.61 1.49l2.45 1.49L7.5 21h9l2.45-4.51 2.45-1.49c.52-.31.81-.94.61-1.49zM9 12h6v3H9v-3z"/></svg>
+                 Ver carpeta completa en Drive
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mini Quiz de Autoevaluación -->
+        <section id="quiz" class="my-5" data-aos="fade-up">
+          <h3 class="fw-bold text-center mb-4"><i class="fa-solid fa-clipboard-question me-2 secondary-icon"></i>Autoevaluación de la Unidad I</h3>
+          <div class="quiz-container card" data-quiz-id="unidad1">
+            <div class="card-body text-center p-5">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando quiz...</span>
               </div>
             </div>
           </div>
+        </section>
 
-        </div>
-      </div>
-    </div>
-    
-    <!-- Card de Bibliografía -->
-    <div class="card text-center my-5 bibliografia-drive" data-aos="zoom-in">
-      <div class="card-body p-4">
-        <h5 class="card-title h4"><i class="fa-solid fa-book-open me-2"></i>Bibliografía de la Unidad</h5>
-        <p class="card-text text-muted">Consulta los textos y materiales complementarios para profundizar los temas vistos.</p>
-        <a href="https://drive.google.com/drive/folders/1zdlgyEAscoCIt5GcelzrkYu9P04DD9gQ?usp=sharing" class="btn btn-secondary mt-2" target="_blank" rel="noopener noreferrer">
-          Acceder a la bibliografía completa <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-        </a>
-      </div>
-    </div>
+        <!-- Muro de Comentarios -->
+        <section id="comentarios" class="my-5" data-aos="fade-up">
+            <h3 class="fw-bold text-center mb-4"><i class="fa-solid fa-comments me-2 primary-icon"></i>Comentarios de la comunidad</h3>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-muted text-center small">Dejá tus dudas, aportes o reflexiones sobre esta unidad.</p>
+                    <script src="https://giscus.app/client.js"
+                        data-repo="joaquingalasso/esi-interactiva-comments"
+                        data-repo-id="R_kgDOMfL1oA"
+                        data-category="Comentarios Unidades"
+                        data-category-id="DIC_kwDOMfL1oM4ChprT"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="top"
+                        data-theme="preferred_color_scheme"
+                        data-lang="es"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
+                </div>
+            </div>
+        </section>
 
-  </main>
+      </main>
+    </div>
+  </div>
   
   <!-- Botón "Volver Arriba" -->
   <button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Volver arriba">
@@ -242,18 +253,30 @@
   <!-- Pie de página -->
   <footer class="py-4 text-center text-muted border-top mt-5">
     <div class="container">
-      <p>Cátedra “Seminario de Educación Sexual Integral: reflexiones en torno a las prácticas docentes”</p>
-      <p class="mb-0">Facultad de Artes – Universidad Nacional de La Plata (UNLP)</p>
+      <p>ESInteractiva - Cátedra “Seminario de Educación Sexual Integral” - FDA, UNLP</p>
     </div>
   </footer>
+
+  <!-- Template para las preguntas del Quiz -->
+  <template id="quiz-question-template">
+    <div class="quiz-question-slide">
+      <p class="fw-bold question-text"></p>
+      <div class="list-group options-container"></div>
+      <div class="feedback-container mt-3"></div>
+    </div>
+  </template>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- JS para GLightbox -->
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-  <!-- JS para GSAP (animaciones) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  
   <script src="../js/app.js"></script>
+  <script src="../js/glosario.js"></script>
+  <script src="../js/quiz.js"></script>
 </body>
 </html>

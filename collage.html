@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collage Multimedia - Repositorio ESI</title>
+  <title>Collage Multimedia - ESInteractiva</title>
   <meta name="description" content="Collage de recursos multimedia sobre Educación Sexual Integral: arte, videos, documentos y más.">
   
-  <!-- Favicon SVG (Corazón violeta) -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💜</text></svg>'>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 
   <!-- Estilos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,42 +23,44 @@
   ================================================== -->
   <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
-        <i class="fa-solid fa-book-heart me-2 primary-icon"></i>
-        ESI Repositorio
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="Logo ESInteractiva" class="me-2" style="height: 40px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Unidades
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unidades</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="unidades/unidad-1.html">Unidad I: Dimensión Normativa</a></li>
               <li><a class="dropdown-item" href="unidades/unidad-2.html">Unidad II: Enfoques Teóricos</a></li>
               <li><a class="dropdown-item" href="unidades/unidad-3.html">Unidad III: ESI y Arte</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="collage.html">Collage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="timeline.html">Línea de tiempo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#equipo">Quiénes Somos</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="collage.html">Collage</a></li>
+          <li class="nav-item"><a class="nav-link" href="timeline.html">Línea de tiempo</a></li>
+          <li class="nav-item"><a class="nav-link" href="decalogo.html">Decálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#equipo">Quiénes Somos</a></li>
         </ul>
-        <!-- Toggle para modo oscuro/claro -->
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="themeSwitcher" aria-label="Cambiar tema">
-          <label class="form-check-label" for="themeSwitcher"><i class="fa-solid fa-circle-half-stroke"></i></label>
+        <!-- Controles de Accesibilidad y Tema -->
+        <div class="d-flex align-items-center">
+            <div class="dropdown me-2">
+              <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Opciones de accesibilidad">
+                <i class="fa-solid fa-universal-access"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end accessibility-menu">
+                <li><h6 class="dropdown-header">Accesibilidad</h6></li>
+                <li><div class="form-check form-switch dropdown-item"><input class="form-check-input" type="checkbox" role="switch" id="highContrastSwitcher"><label class="form-check-label" for="highContrastSwitcher">Alto Contraste</label></div></li>
+                <li><div class="form-check form-switch dropdown-item"><input class="form-check-input" type="checkbox" role="switch" id="fontSizeSwitcher"><label class="form-check-label" for="fontSizeSwitcher">Aumentar Fuente</label></div></li>
+              </ul>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="themeSwitcher" aria-label="Cambiar tema">
+              <label class="form-check-label" for="themeSwitcher"><i class="fa-solid fa-circle-half-stroke"></i></label>
+            </div>
         </div>
       </div>
     </div>
@@ -76,7 +77,7 @@
 
     <!-- Filtros del Collage -->
     <div class="text-center mb-5 collage-filters" data-aos="fade-up">
-      <div class="btn-group" role="group" aria-label="Filtros de recursos">
+      <div class="btn-group flex-wrap" role="group" aria-label="Filtros de recursos">
         <button type="button" class="btn btn-outline-primary is-checked" data-filter="*">Todos</button>
         <button type="button" class="btn btn-outline-primary" data-filter=".arte">Arte</button>
         <button type="button" class="btn btn-outline-primary" data-filter=".video">Video</button>
@@ -87,89 +88,40 @@
 
     <!-- Grilla del Collage (Masonry) -->
     <div class="row collage-grid" data-aos="fade-up" data-aos-delay="200">
-      
-      <!-- Ejemplo item: Arte -->
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte">
-        <a href="https://placehold.co/800x1200/7e36e7/white?text=Arte+ESI" class="glightbox" data-gallery="collage" title="Afiche sobre ESI">
-          <div class="card">
-            <img src="https://placehold.co/400x600/7e36e7/white?text=Arte+ESI" class="card-img-top" alt="Afiche sobre ESI">
-            <div class="card-body">
-              <h5 class="card-title">Afiche sobre ESI</h5>
-              <p class="card-text text-muted">Ejemplo de producción artística para el aula.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Ejemplo item: Video -->
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item video">
-        <a href="https://www.youtube.com/watch?v=GrEA2tJj_3M" class="glightbox" data-gallery="collage" title="Canal Encuentro - ¿Qué es la ESI?">
-          <div class="card">
-             <img src="https://placehold.co/400x300/ff6b6b/white?text=Video" class="card-img-top" alt="Video sobre ESI">
-             <div class="grid-item-overlay"><i class="fa-solid fa-play"></i></div>
-            <div class="card-body">
-              <h5 class="card-title">¿Qué es la ESI?</h5>
-              <p class="card-text text-muted">Corto animado de Canal Encuentro.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Ejemplo item: Ley (PDF) -->
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item ley">
-        <a href="https://www.argentina.gob.ar/sites/default/files/ley-de-educ-nac-58ac89392ea4c.pdf" class="glightbox" data-gallery="collage" data-type="iframe" title="Ley 26.206 de Educación Nacional">
-          <div class="card">
-            <img src="https://placehold.co/400x500/222222/white?text=Ley+PDF" class="card-img-top" alt="Documento de Ley">
-            <div class="grid-item-overlay"><i class="fa-solid fa-file-pdf"></i></div>
-            <div class="card-body">
-              <h5 class="card-title">Ley de Educación Nacional</h5>
-              <p class="card-text text-muted">Documento oficial en PDF.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-       <!-- Ejemplo item: Podcast (Audio) -->
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item podcast">
-        <a href="https://ia801507.us.archive.org/27/items/LaESIenJuego/LaESIenJuego.mp3" class="glightbox" data-gallery="collage" data-type="audio" title="Podcast: La ESI en Juego">
-          <div class="card">
-            <img src="https://placehold.co/400x400/7e36e7/white?text=Podcast" class="card-img-top" alt="Podcast sobre ESI">
-            <div class="grid-item-overlay"><i class="fa-solid fa-headphones-simple"></i></div>
-            <div class="card-body">
-              <h5 class="card-title">La ESI en juego</h5>
-              <p class="card-text text-muted">Episodio de podcast para docentes.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Ejemplo item: Arte 2 -->
-      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte">
-        <a href="https://placehold.co/800x800/ff6b6b/white?text=Mural" class="glightbox" data-gallery="collage" title="Mural por la Diversidad">
-          <div class="card">
-            <img src="https://placehold.co/400x400/ff6b6b/white?text=Mural" class="card-img-top" alt="Mural por la Diversidad">
-            <div class="card-body">
-              <h5 class="card-title">Mural por la Diversidad</h5>
-              <p class="card-text text-muted">Intervención artística en espacio público.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x1200/7e36e7/white?text=Arte+ESI" class="glightbox" data-gallery="collage" title="Afiche sobre ESI"><div class="card"><img src="https://placehold.co/400x600/7e36e7/white?text=Arte+ESI" class="card-img-top" alt="Afiche sobre ESI"><div class="card-body"><h5 class="card-title">Afiche sobre ESI</h5><p class="card-text text-muted">Ejemplo de producción artística.</p></div></div></a></div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item video"><a href="https://www.youtube.com/watch?v=GrEA2tJj_3M" class="glightbox" data-gallery="collage" title="Canal Encuentro - ¿Qué es la ESI?"><div class="card"><img src="https://placehold.co/400x300/ff6b6b/white?text=Video" class="card-img-top" alt="Video sobre ESI"><div class="grid-item-overlay"><i class="fa-solid fa-play"></i></div><div class="card-body"><h5 class="card-title">¿Qué es la ESI?</h5><p class="card-text text-muted">Corto animado de Canal Encuentro.</p></div></div></a></div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item ley"><a href="https://www.argentina.gob.ar/sites/default/files/ley-de-educ-nac-58ac89392ea4c.pdf" class="glightbox" data-gallery="collage" data-type="iframe" title="Ley 26.206 de Educación Nacional"><div class="card"><img src="https://placehold.co/400x500/222222/white?text=Ley+PDF" class="card-img-top" alt="Documento de Ley"><div class="grid-item-overlay"><i class="fa-solid fa-file-pdf"></i></div><div class="card-body"><h5 class="card-title">Ley de Educación Nacional</h5><p class="card-text text-muted">Documento oficial en PDF.</p></div></div></a></div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item podcast"><a href="https://ia801507.us.archive.org/27/items/LaESIenJuego/LaESIenJuego.mp3" class="glightbox" data-gallery="collage" data-type="audio" title="Podcast: La ESI en Juego"><div class="card"><img src="https://placehold.co/400x400/7e36e7/white?text=Podcast" class="card-img-top" alt="Podcast sobre ESI"><div class="grid-item-overlay"><i class="fa-solid fa-headphones-simple"></i></div><div class="card-body"><h5 class="card-title">La ESI en juego</h5><p class="card-text text-muted">Episodio de podcast para docentes.</p></div></div></a></div>
+      <div class="col-sm-6 col-lg-4 col-xl-3 grid-item arte"><a href="https://placehold.co/800x800/ff6b6b/white?text=Mural" class="glightbox" data-gallery="collage" title="Mural por la Diversidad"><div class="card"><img src="https://placehold.co/400x400/ff6b6b/white?text=Mural" class="card-img-top" alt="Mural por la Diversidad"><div class="card-body"><h5 class="card-title">Mural por la Diversidad</h5><p class="card-text text-muted">Intervención artística en espacio público.</p></div></div></a></div>
     </div>
   </main>
   
-  <!-- Botón "Volver Arriba" -->
-  <button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Volver arriba">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  
+  <!-- SECCIÓN FORMULARIO DE SUGERENCIAS -->
+    <section id="nuevo-recurso" class="py-5 bg-body-secondary mt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center" data-aos="fade-up">
+            <h2 class="fw-bold">¿Encontraste un recurso genial?</h2>
+            <p class="text-muted mb-4">¡Ayudanos a hacer crecer este collage! Si tenés un link a un video, podcast, artículo o imagen que crees que debería estar acá, compartilo con nosotrxs.</p>
+            <form action="https://formspree.io/f/XXXXXXXX" method="POST">
+                <!-- Honeypot para evitar spam -->
+                <input type="text" name="_gotcha" style="display:none">
+                <div class="row">
+                    <div class="col-md-6 mb-3"><input type="text" class="form-control" name="nombre" placeholder="Tu nombre (opcional)"></div>
+                    <div class="col-md-6 mb-3"><input type="email" class="form-control" name="email" placeholder="Tu email (opcional)"></div>
+                </div>
+                <div class="mb-3"><textarea class="form-control" name="sugerencia_recurso" rows="4" placeholder="Pegá acá el link al recurso y contanos brevemente de qué se trata y por qué lo sugerís..." required></textarea></div>
+                <button type="submit" class="btn btn-secondary">Sugerir Recurso</button>
+            </form>
+             <small class="d-block mt-3 text-muted">No te olvides de configurar tu endpoint de Formspree.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
   <!-- Pie de página -->
   <footer class="py-4 text-center text-muted border-top mt-5">
-    <div class="container">
-      <p>Cátedra “Seminario de Educación Sexual Integral: reflexiones en torno a las prácticas docentes”</p>
-      <p class="mb-0">Facultad de Artes – Universidad Nacional de La Plata (UNLP)</p>
-    </div>
+    <div class="container"><p>ESInteractiva - Cátedra “Seminario de Educación Sexual Integral” - FDA, UNLP</p></div>
   </footer>
 
   <!-- Scripts -->
@@ -177,6 +129,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  
   <script src="js/app.js"></script>
   <script src="js/collage.js"></script>
 </body>
